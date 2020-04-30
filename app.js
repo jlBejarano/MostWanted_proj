@@ -12,10 +12,10 @@ function app(people){
       searchResults = searchByName(people);
       break;
     case 'no':
-      // TODO: search by traits
+      searchResults = searchByTraits(people);
       break;
-      default:
-    app(people); // restart app
+    default:
+      app(people); // restart app
       break;
   }
   
@@ -37,21 +37,21 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-    // TODO: get person's info
-    break;
+      displayPerson(person, people);
+      break;
     case "family":
-    // TODO: get person's family
-    break;
+      displayFamily(person, people);
+      break;
     case "descendants":
-    // TODO: get person's descendants
-    break;
+      displayDescendants(person, people)
+      break;
     case "restart":
-    app(people); // restart
-    break;
+      app(people); // restart
+      break;
     case "quit":
-    return; // stop execution
+      return; // stop execution
     default:
-    return mainMenu(person, people); // ask again
+      return mainMenu(person, people); // ask again
   }
 }
 
