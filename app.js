@@ -55,6 +55,112 @@ function mainMenu(person, people){
   }
 }
 
+function searchByTraits(people){
+
+  var trait = "";
+  var traitsList = people;
+
+  traitsList = searchByGender(traitsList);
+  traitsList = searchByHeight(traitsList);
+  traitsList = searchByWeight(traitsList);
+  traitsList = searchOccupation(traitsList);
+  traitsList = searchByEyeColor(traitsList);
+
+  if(traitsList.length === 22){
+    alert("No criteria selected.")
+  }
+  else if(traitsList.length === 0){
+    alert("Search criteria not found.")
+  }
+  else{
+    for(var i=0; i < traitsList.length; i++){
+      trait += traitsList[i].firstName + " " + traitsList[i].lastName + " ";
+    }
+    alert(trait);
+  }
+  app(people);
+}
+
+function searchByGender(people){
+
+  var genderSearch = promptFor("Search by gender? Enter yes or no.", yesNo).toLowerCase();
+
+  switch (genderSearch){
+    case "yes":
+      var findGender = lookUpGender(people);
+      return findGender;
+    case "no":
+      return people;
+    default:
+      searchByGender(people);
+    break;
+  }
+}
+
+function searchByHeight(people){
+  
+  var heightSearch = promptFor("Search by height? Enter yes or no.", yesNo).toLowerCase();
+
+  switch (heightSearch){
+    case "yes":
+      var findHeight = lookUpHeight(people);
+      return findHeight;
+    case "no":
+      return people;
+    default:
+      searchByHeight(people);
+    break;
+  }
+}
+
+function searchByWeight(people){
+  
+  var weightSearch = promptFor("Search by weight? Enter yes or no.", yesNo).toLowerCase();
+
+  switch (weightSearch){
+    case "yes":
+      var findWeight = lookUpWeight(people);
+      return findWeight;
+    case "no":
+      return people;
+    default:
+      searchByWeight(people);
+    break;
+  }
+}
+
+function searchByOccupation(people){
+  
+  var occupationSearch = promptFor("Search by occupation? Enter yes or no.", yesNo).toLowerCase();
+
+  switch (occupationSearch){
+    case "yes":
+      var findOccupation = lookUpOccupation(people);
+      return findOccupation;
+    case "no":
+      return people;
+    default:
+      searchByOccupation(people);
+    break;
+  }
+}
+
+function searchByEyeColor(people){
+  
+  var eyeColorSearch = promptFor("Search by eye color? Enter yes or no.", yesNo).toLowerCase();
+
+  switch (eyeColorSearch){
+    case "yes":
+      var findEyeColor = lookUpEyeColor(people);
+      return findEyeColor;
+    case "no":
+      return people;
+    default:
+      searchByEyeColor(people);
+    break;
+  }
+}
+
 function searchByName(people){
   let firstName = promptFor("What is the person's first name?", chars);
   let lastName = promptFor("What is the person's last name?", chars);
