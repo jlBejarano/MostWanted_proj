@@ -63,7 +63,7 @@ function searchByTraits(people){
   traitsList = searchByGender(traitsList);
   traitsList = searchByHeight(traitsList);
   traitsList = searchByWeight(traitsList);
-  traitsList = searchOccupation(traitsList);
+  traitsList = searchByOccupation(traitsList);
   traitsList = searchByEyeColor(traitsList);
 
   if(traitsList.length === 22){
