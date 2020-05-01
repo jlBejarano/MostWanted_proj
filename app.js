@@ -57,8 +57,7 @@ function mainMenu(person, people){
 
 function searchByTraits(people){
 
-  var trait = "";
-  var traitsList = people;
+  let traitsList = people;
 
   traitsList = searchByGender(traitsList);
   traitsList = searchByHeight(traitsList);
@@ -66,24 +65,15 @@ function searchByTraits(people){
   traitsList = searchByOccupation(traitsList);
   traitsList = searchByEyeColor(traitsList);
 
-  if(traitsList.length === 22){
-    alert("No criteria selected.")
-  }
-  else if(traitsList.length === 0){
-    alert("Search criteria not found.")
-  }
-  else{
-    for(var i=0; i < traitsList.length; i++){
-      trait += traitsList[i].firstName + " " + traitsList[i].lastName + " ";
-    }
-    alert(trait);
+  if(traitsList !== 0){
+    alert("No search criteria selected.")
   }
   app(people);
 }
 
 function searchByGender(people){
 
-  var genderSearch = promptFor("Search by gender? Enter yes or no.", yesNo).toLowerCase();
+  let genderSearch = promptFor("Search by gender? Enter yes or no.", yesNo).toLowerCase();
 
   switch (genderSearch){
     case "yes":
@@ -99,7 +89,7 @@ function searchByGender(people){
 
 function searchByHeight(people){
   
-  var heightSearch = promptFor("Search by height? Enter yes or no.", yesNo).toLowerCase();
+  let heightSearch = promptFor("Search by height? Enter yes or no.", yesNo).toLowerCase();
 
   switch (heightSearch){
     case "yes":
@@ -115,7 +105,7 @@ function searchByHeight(people){
 
 function searchByWeight(people){
   
-  var weightSearch = promptFor("Search by weight? Enter yes or no.", yesNo).toLowerCase();
+  let weightSearch = promptFor("Search by weight? Enter yes or no.", yesNo).toLowerCase();
 
   switch (weightSearch){
     case "yes":
@@ -131,7 +121,7 @@ function searchByWeight(people){
 
 function searchByOccupation(people){
   
-  var occupationSearch = promptFor("Search by occupation? Enter yes or no.", yesNo).toLowerCase();
+  let occupationSearch = promptFor("Search by occupation? Enter yes or no.", yesNo).toLowerCase();
 
   switch (occupationSearch){
     case "yes":
@@ -147,7 +137,7 @@ function searchByOccupation(people){
 
 function searchByEyeColor(people){
   
-  var eyeColorSearch = promptFor("Search by eye color? Enter yes or no.", yesNo).toLowerCase();
+  let eyeColorSearch = promptFor("Search by eye color? Enter yes or no.", yesNo).toLowerCase();
 
   switch (eyeColorSearch){
     case "yes":
@@ -160,6 +150,16 @@ function searchByEyeColor(people){
     break;
   }
 }
+
+// function lookUpGender(people){
+
+//   let gender = parseInt(promptFor("What is the person's gender?", chars));
+//   let foundGender = people.filter(function (element){
+
+//     if(element.gender === gender){
+//       return foundGender;
+//     }
+// });
 
 function searchByName(people){
   let firstName = promptFor("What is the person's first name?", chars);
