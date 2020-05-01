@@ -12,10 +12,10 @@ function app(people){
       searchResults = searchByName(people);
       break;
     case 'no':
-      // TODO: search by traits
+      searchResults = searchByTraits(people);
       break;
-      default:
-    app(people); // restart app
+    default:
+      app(people); // restart app
       break;
   }
   
@@ -37,23 +37,129 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-    // TODO: get person's info
-    break;
+      displayPerson(person, people);
+      break;
     case "family":
-    // TODO: get person's family
-    break;
+      displayFamily(person, people);
+      break;
     case "descendants":
-    // TODO: get person's descendants
-    break;
+      displayDescendants(person, people)
+      break;
     case "restart":
-    app(people); // restart
-    break;
+      app(people); // restart
+      break;
     case "quit":
-    return; // stop execution
+      return; // stop execution
     default:
-    return mainMenu(person, people); // ask again
+      return mainMenu(person, people); // ask again
   }
 }
+
+function searchByTraits(people){
+
+  let traitsList = people;
+
+  traitsList = searchByGender(traitsList);
+  traitsList = searchByHeight(traitsList);
+  traitsList = searchByWeight(traitsList);
+  traitsList = searchByOccupation(traitsList);
+  traitsList = searchByEyeColor(traitsList);
+
+  if(traitsList !== 0){
+    alert("No search criteria selected.")
+  }
+  app(people);
+}
+
+function searchByGender(people){
+
+  let genderSearch = promptFor("Search by gender? Enter yes or no.", yesNo).toLowerCase();
+
+  switch (genderSearch){
+    case "yes":
+      var findGender = lookUpGender(people);
+      return findGender;
+    case "no":
+      return people;
+    default:
+      searchByGender(people);
+    break;
+  }
+}
+
+function searchByHeight(people){
+  
+  let heightSearch = promptFor("Search by height? Enter yes or no.", yesNo).toLowerCase();
+
+  switch (heightSearch){
+    case "yes":
+      var findHeight = lookUpHeight(people);
+      return findHeight;
+    case "no":
+      return people;
+    default:
+      searchByHeight(people);
+    break;
+  }
+}
+
+function searchByWeight(people){
+  
+  let weightSearch = promptFor("Search by weight? Enter yes or no.", yesNo).toLowerCase();
+
+  switch (weightSearch){
+    case "yes":
+      var findWeight = lookUpWeight(people);
+      return findWeight;
+    case "no":
+      return people;
+    default:
+      searchByWeight(people);
+    break;
+  }
+}
+
+function searchByOccupation(people){
+  
+  let occupationSearch = promptFor("Search by occupation? Enter yes or no.", yesNo).toLowerCase();
+
+  switch (occupationSearch){
+    case "yes":
+      var findOccupation = lookUpOccupation(people);
+      return findOccupation;
+    case "no":
+      return people;
+    default:
+      searchByOccupation(people);
+    break;
+  }
+}
+
+function searchByEyeColor(people){
+  
+  let eyeColorSearch = promptFor("Search by eye color? Enter yes or no.", yesNo).toLowerCase();
+
+  switch (eyeColorSearch){
+    case "yes":
+      var findEyeColor = lookUpEyeColor(people);
+      return findEyeColor;
+    case "no":
+      return people;
+    default:
+      searchByEyeColor(people);
+    break;
+  }
+}
+
+// function lookUpGender(people){
+
+//   let gender = parseInt(promptFor("What is the person's gender?", chars));
+//   let foundGender = people.filter(function (element){
+
+//     if(element.gender === gender){
+//       return foundGender;
+//     }
+// });
 
 function searchByName(people){
   let firstName = promptFor("What is the person's first name?", chars);
