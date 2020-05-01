@@ -83,9 +83,19 @@ function displayPerson(person){
   // height, weight, age, name, occupation, eye color.
   let personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
-  // TODO: finish getting the rest of the information to display
-  alert(personInfo);
+  let personInfo = "Height" + "/n";
+  personInfo += "Height" + person.height + "/n";
+  let personInfo = "Weight" + person.weight + "/n";
+  personInfo += "Weight" + person.weight + "/n";
+  let personInfo = "Age" + "/n";
+  personInfo += "Age" + person.age + "/n";
+  let personInfo = "Occupation"+ "/n";
+  personInfo += "Occupation"+ person.occupation + "/n";
+  let personInfo ="Eye Color" + "/n";
+  personInfo += "Eye Color" + person.eyecolor + "/n";
 }
+// TODO: finish getting the rest of the information to display
+alert(personInfo);
 
 // function that prompts and validates user input
 function promptFor(question, valid){
