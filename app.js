@@ -151,16 +151,6 @@ function searchByEyeColor(people){
   }
 }
 
-// function lookUpGender(people){
-
-//   let gender = parseInt(promptFor("What is the person's gender?", chars));
-//   let foundGender = people.filter(function (element){
-
-//     if(element.gender === gender){
-//       return foundGender;
-//     }
-// });
-
 function searchByName(people){
   let firstName = promptFor("What is the person's first name?", chars);
   let lastName = promptFor("What is the person's last name?", chars);
@@ -173,9 +163,11 @@ function searchByName(people){
       return false;
     }
   })
-  // TODO: find the person using the name they entered
+  foundPerson = foundPerson[0];
   return foundPerson;
 }
+  // TODO: find the person using the name they entered
+
 
 // alerts a list of people
 function displayPeople(people){
@@ -187,21 +179,19 @@ function displayPeople(people){
 function displayPerson(person){
   // print all of the information about a person:
   // height, weight, age, name, occupation, eye color.
-  let personInfo = "First Name: " + person.firstName + "\n";
+  personInfo = 
+
+  personInfo += "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
-  let personInfo = "Height" + "\n";
-  personInfo += "Height" + person.height + "\n";
-  let personInfo = "Weight" + person.weight + "\n";
-  personInfo += "Weight" + person.weight + "\n";
-  let personInfo = "Age" + "\n";
-  personInfo += "Age" + person.age + "\n";
-  let personInfo = "Occupation"+ "\n";
-  personInfo += "Occupation"+ person.occupation + "\n";
-  let personInfo ="Eye Color" + "\n";
-  personInfo += "Eye Color" + person.eyecolor + "\n";
+  personInfo += "Gender:" + person.gender + "\n";
+  personInfo += "Height:" + person.height + "\n";
+  personInfo += "Weight:" + person.weight + "\n";
+  personInfo += "Occupation:" + person.occupation + "\n";
+  personInfo += "Eye Color:" + person.eyeColor + "\n";
+  alert(personInfo);
 }
 // TODO: finish getting the rest of the information to display
-alert(personInfo);
+
 
 // function that prompts and validates user input
 function promptFor(question, valid){
