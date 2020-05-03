@@ -75,6 +75,21 @@ function searchByGender(people){
 
   let genderSearch = promptFor("Search by gender? Enter yes or no.", yesNo).toLowerCase();
 
+  let foundPerson = people.filter(function(person){
+    if(person.genderSearch === genderSearch){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  var found = "";
+  for (var i = 0; i <= foundPerson.length -1; i++){
+    found =+ foundPerson[i].firstName + " " + foundPerson[i].lastName + "\n";
+  }
+  alert(found);
+  app(people);
+
   switch (genderSearch){
     case "yes":
       var findGender = lookUpGender(people);
@@ -90,6 +105,21 @@ function searchByGender(people){
 function searchByHeight(people){
   
   let heightSearch = promptFor("Search by height? Enter yes or no.", yesNo).toLowerCase();
+  
+  let foundPerson = people.filter(function(person){
+    if(person.heightSearch === heightSearch){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  var found = "";
+  for (var i = 0; i <= foundPerson.length -1; i++){
+    found =+ foundPerson[i].firstName + " " + foundPerson[i].lastName + "\n";
+  }
+  alert(found);
+  app(people);
 
   switch (heightSearch){
     case "yes":
@@ -107,6 +137,21 @@ function searchByWeight(people){
   
   let weightSearch = promptFor("Search by weight? Enter yes or no.", yesNo).toLowerCase();
 
+  let foundPerson = people.filter(function(person){
+    if(person.weightSearch === weightSearch){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  var found = "";
+  for (var i = 0; i <= foundPerson.length -1; i++){
+    found =+ foundPerson[i].firstName + " " + foundPerson[i].lastName + "\n";
+  }
+  alert(found);
+  app(people);
+
   switch (weightSearch){
     case "yes":
       var findWeight = lookUpWeight(people);
@@ -123,6 +168,21 @@ function searchByOccupation(people){
   
   let occupationSearch = promptFor("Search by occupation? Enter yes or no.", yesNo).toLowerCase();
 
+  let foundPerson = people.filter(function(person){
+    if(person.occupationSearch === occupationSearch){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  var found = "";
+  for (var i = 0; i <= foundPerson.length -1; i++){
+    found =+ foundPerson[i].firstName + " " + foundPerson[i].lastName + "\n";
+  }
+  alert(found);
+  app(people);
+
   switch (occupationSearch){
     case "yes":
       var findOccupation = lookUpOccupation(people);
@@ -138,6 +198,21 @@ function searchByOccupation(people){
 function searchByEyeColor(people){
   
   let eyeColorSearch = promptFor("Search by eye color? Enter yes or no.", yesNo).toLowerCase();
+  
+  let foundPerson = people.filter(function(person){
+    if(person.eyeColorSearch === eyeColorSearch){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  var found = "";
+  for (var i = 0; i <= foundPerson.length -1; i++){
+    found =+ foundPerson[i].firstName + " " + foundPerson[i].lastName + "\n";
+  }
+  alert(found);
+  app(people);
 
   switch (eyeColorSearch){
     case "yes":
