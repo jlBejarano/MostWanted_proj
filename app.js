@@ -285,3 +285,164 @@ function yesNo(input){
 function chars(input){
   return true; // default validation only
 }
+//find methods
+function findGender(people){
+  let foundPerson = people.filter(function(person){
+    if(person.genderSearch === genderSearch){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  var found = "";
+  for (var i = 0; i <= foundPerson.length -1; i++){
+    found =+ foundPerson[i].firstName + " " + foundPerson[i].lastName + "\n";
+  }
+  alert(found);
+  app(people);
+}
+
+function findHeight(people){
+  let foundPerson = people.filter(function(person){
+    if(person.heightSearch === heightSearch){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  var found = "";
+  for (var i = 0; i <= foundPerson.length -1; i++){
+    found =+ foundPerson[i].firstName + " " + foundPerson[i].lastName + "\n";
+  }
+  alert(found);
+  app(people);
+}
+
+function findWeight(people){
+  let foundPerson = people.filter(function(person){
+    if(person.weightSearch === weightSearch){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  var found = "";
+  for (var i = 0; i <= foundPerson.length -1; i++){
+    found =+ foundPerson[i].firstName + " " + foundPerson[i].lastName + "\n";
+  }
+  alert(found);
+  app(people);
+}
+
+function findOccupation(people){
+  let foundPerson = people.filter(function(person){
+    if(person.occupationSearch === occupationSearch){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  var found = "";
+  for (var i = 0; i <= foundPerson.length -1; i++){
+    found =+ foundPerson[i].firstName + " " + foundPerson[i].lastName + "\n";
+  }
+  alert(found);
+  app(people);
+}
+
+function findEyeColor(people){
+  let foundPerson = people.filter(function(person){
+    if(person.eyeColorSearch === eyeColorSearch){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  var found = "";
+  for (var i = 0; i <= foundPerson.length -1; i++){
+    found =+ foundPerson[i].firstName + " " + foundPerson[i].lastName + "\n";
+  }
+  alert(found);
+  app(people);
+}
+//parent, spouse, sibling search functions
+function searchForParents(person, people){
+  let foundParents = people.filter(function(people){    
+    if(person.parents.includes(people.id)){
+      return true;
+    }
+    else{
+      return false;
+    }    
+  })
+  return foundParents;
+}
+
+function searchForSpouse(person, people){
+  let foundSpouse = people.filter(function(people){
+    if(people.currentSpouse == person.id){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  return foundSpouse;
+}
+
+function searchForSiblings(person, people){
+  let foundSiblings = people.filter(function(people){
+    for(let i = 0; i < people.parents.length; i++){
+        if(person.parents.includes(people.parents[i]) && person.id !== people.id){
+          return true;
+        }             
+      }
+    return false;           
+  })
+  return foundSiblings;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
