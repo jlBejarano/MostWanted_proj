@@ -407,6 +407,23 @@ function searchForSiblings(person, people){
   return foundSiblings;
 }
 
+function searchForDecendants(person, people) {
+  let foundDecendants = people.filter(function(people){
+    for(let i = 0; i < people.searchForDecendants.length; i++){
+      if (people.searchForDecendants.includes(people.decendants[i]) && people.id){
+        return true;
+      }
+    }
+    return false;
+  })
+  return foundDecendants;
+
+  function displayDescendants(){
+    console.log("Found Decendants");
+    displayFoundDecendants();
+  }
+
+
 
 
 
